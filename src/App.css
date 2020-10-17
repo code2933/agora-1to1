@@ -1,4 +1,7 @@
-.App {
-
+.app {
+  padding: 20px;
 }
 
+.app .advanced-settings {
+  margin-top: 20px;
+}

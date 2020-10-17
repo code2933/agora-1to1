@@ -1,0 +1,8 @@
+.advanced-settings {
+  width: 520px;
+  background-color: #fff;
+}
+
+.advanced-settings .ant-collapse-item {
+  border: none;
+}
