@@ -12,7 +12,7 @@ const initialState = {
   token: '',
 }
 
-type IState = typeof initialState
+export type IState = typeof initialState
 
 const FORM_ITEMS: IFormItem[] = [
   {
@@ -58,7 +58,7 @@ const withValidate = (state: { [name: string]: any }) => (action: Function) => {
   return () => action(state)
 }
 
-export default function ControlForm({
+export default function BaseSettings({
   onJoin,
   onLeave,
   onPublish,
@@ -67,15 +67,10 @@ export default function ControlForm({
   const [state, dispatch] = useReducer(reducer, initialState)
   const withValidateState = withValidate(state)
   return (
-    <Card className="control-form" bordered={false}>
+    <Card className="base-settings" bordered={false}>
       <Form {...formLayout}>
         {FORM_ITEMS.map(item => (
-          <Form.Item
-            label={item.label}
-            name={item.name}
-            required
-            key={item.name}
-          >
+          <Form.Item label={item.label} required key={item.name}>
             <Input
               value={state[item.name as keyof IState]}
               onChange={e =>

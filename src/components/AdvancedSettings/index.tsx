@@ -91,7 +91,7 @@ export default function AdvancedSettings({ state, dispatch }: IProps) {
         })
       })
       .catch(message.error)
-  }, [])
+  }, [dispatch])
   return (
     <Collapse className="advanced-settings" bordered={false}>
       <Collapse.Panel key="1" header="ADVANCED SETTINGS">
